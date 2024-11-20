@@ -37,7 +37,7 @@ window.addEventListener("touchmove", (e) => {
 
 window.addEventListener("touchend", (e)=>{
     pseudoCanvas.style.backgroundColor = "rgb(155, 184, 255)";
-    h1.innerHTML = "rien pen toute"
+    h1.innerHTML = "peut etr fini?"
     exDistance = null;
 });
 
