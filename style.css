@@ -8,9 +8,15 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 canvas{
     background-color: rgb(8, 49, 152);
+}
+h1{
+    color: aliceblue;
+    width: auto;
+    height: 50px;
 }
