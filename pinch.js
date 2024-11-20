@@ -32,14 +32,13 @@ window.addEventListener("touchmove", (e) => {
         } else {
             h1.innerHTML = "juste 1 doigté";
         }
-    } else {
-        exDistance = null;
     }
 });
 
 window.addEventListener("touchend", (e)=>{
     pseudoCanvas.style.backgroundColor = "rgb(155, 184, 255)";
     h1.innerHTML = "rien pen toute"
+    exDistance = null;
 });
 
 function trouverCTriangle(px1, px2, py1, py2){
