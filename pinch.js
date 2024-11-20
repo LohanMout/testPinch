@@ -9,4 +9,5 @@ window.addEventListener('wheel', function (e) {
 window.addEventListener("touchmove", (e) => {
     var touch = e.touches[0] || e.changedTouches[0];
     pseudoCanvas.style.backgroundColor = "green";
+    console.log("CA BOUGE");
 });
