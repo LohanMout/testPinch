@@ -2,22 +2,9 @@ var pseudoCanvas = document.getElementById("canvas");
 var h1 = document.querySelector("h1");
 var zoom = 100;
 var exDistance = null;
-window.addEventListener('wheel', function (e) {
-     zoom -= e.deltaY / 100
-     pseudoCanvas.style.transform = "scale(" + zoom + "%)"
-});
 
 window.addEventListener("touchmove", (e) => {
     var touch = e.touches || e.changedTouches;
-    if(touch.length == 0){
-        pseudoCanvas.style.backgroundColor = "red";
-    } else if (touch.length == 1){
-        pseudoCanvas.style.backgroundColor = "yellow";
-    } else if (touch.length == 2){
-        pseudoCanvas.style.backgroundColor = "green";
-    } else if (touch.length > 2){
-        pseudoCanvas.style.backgroundColor = "purple";
-    }
     
     if(touch.length >= 1){
         var doigt1 = e.touches[0];
@@ -35,7 +22,7 @@ window.addEventListener("touchmove", (e) => {
     }
 });
 
-window.addEventListener("touchend", (e)=>{
+window.addEventListener("touchend", ()=>{
     pseudoCanvas.style.backgroundColor = "rgb(155, 184, 255)";
     h1.innerHTML = "peut etr fini?"
     exDistance = null;
