@@ -32,6 +32,8 @@ window.addEventListener("touchmove", (e) => {
         } else {
             h1.innerHTML = "juste 1 doigté";
         }
+    } else {
+        exDistance = null;
     }
 });
 
