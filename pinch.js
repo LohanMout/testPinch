@@ -19,17 +19,17 @@ window.addEventListener("touchmove", (e) => {
     } else if (touch.length > 2){
         pseudoCanvas.style.backgroundColor = "purple";
     }
-    console.log(touch.length);
+    h1.innerHTML = touch.length;
     if(touch.length >= 2){
         var doigt1 = e.touches[0];
         var doigt2 = e.touches[1];
         if(doigt1 != null){
-            h1.innerHTML = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
+            //h1.innerHTML = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
         }
         exDoigt1 = doigt1;
         exDoigt2 = doigt2;
-    } else {
-        h1.innerHTML = "1 doigt"
+    } else if (touch.length == 1){
+        //h1.innerHTML = "1 doigt"
     }
 
     console.log(touch);
