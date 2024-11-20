@@ -24,9 +24,9 @@ window.addEventListener("touchmove", (e) => {
         var doigt2 = e.touches[1];
         if(doigt2 != undefined){
             var distance = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
-            //if(exDistance != null){
+            if(exDistance != null){
                 h1.innerHTML = distance - exDistance;
-            //}
+            }
             exDistance = distance;
         } else {
             h1.innerHTML = "juste 1 doigté";
