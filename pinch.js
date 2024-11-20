@@ -25,7 +25,8 @@ window.addEventListener("touchmove", (e) => {
         if(doigt2 != undefined){
             var distance = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
             if(exDistance != null){
-                h1.innerHTML = distance - exDistance;
+                zoom += distance - exDistance;
+                pseudoCanvas.style.transform = "scale(" + zoom + "%)"
             }
             exDistance = distance;
         } else {
