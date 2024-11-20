@@ -18,15 +18,15 @@ window.addEventListener("touchmove", (e) => {
     } else if (touch.length > 2){
         pseudoCanvas.style.backgroundColor = "purple";
     }
-    h1.innerHTML = touch.length;
+    
     if(touch.length >= 1){
         var doigt1 = e.touches[0];
         var doigt2 = e.touches[1];
         if(doigt2 != undefined){
             var distance = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
-            if(exDistance != null){
+            //if(exDistance != null){
                 h1.innerHTML = distance - exDistance;
-            }
+            //}
             exDistance = distance;
         } else {
             h1.innerHTML = "juste 1 doigté";
@@ -42,6 +42,5 @@ window.addEventListener("touchend", (e)=>{
 function trouverCTriangle(px1, px2, py1, py2){
     var cH = Math.abs(px1 - px2);
     var cV = Math.abs(py1 - py2);
-    console.log(cH, cV);
     return Math.sqrt(cH**2 + cV**2);
 }
