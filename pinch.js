@@ -7,7 +7,19 @@ window.addEventListener('wheel', function (e) {
 });
 
 window.addEventListener("touchmove", (e) => {
-    var touch = e.touches[0] || e.changedTouches[0];
-    pseudoCanvas.style.backgroundColor = "green";
-    console.log("CA BOUGE");
+    var touch = e.touches || e.changedTouches;
+    if(touch.length == 0){
+        pseudoCanvas.style.backgroundColor = "red";
+    } else if (touch.length == 1){
+        pseudoCanvas.style.backgroundColor = "yellow";
+    } else if (touch.length == 2){
+        pseudoCanvas.style.backgroundColor = "green";
+    } else if (touch.length > 2){
+        pseudoCanvas.style.backgroundColor = "purple";
+    }
+    console.log(touch);
+});
+
+window.addEventListener("touchend", (e)=>{
+    pseudoCanvas.style.backgroundColor = "rgb(155, 184, 255)";
 });
