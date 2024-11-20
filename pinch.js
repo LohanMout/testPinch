@@ -1,7 +1,7 @@
 var pseudoCanvas = document.getElementById("canvas");
 var h1 = document.querySelector("h1");
 var zoom = 100;
-var exDoigt1 = null;
+var exDistance = null;
 window.addEventListener('wheel', function (e) {
      zoom -= e.deltaY / 100
      pseudoCanvas.style.transform = "scale(" + zoom + "%)"
@@ -23,7 +23,11 @@ window.addEventListener("touchmove", (e) => {
         var doigt1 = e.touches[0];
         var doigt2 = e.touches[1];
         if(doigt2 != undefined){
-            h1.innerHTML = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
+            var distance = trouverCTriangle(doigt1.clientX, doigt2.clientX, doigt1.clientY, doigt2.clientY);
+            if(exDistance != null){
+                h1.innerHTML = distance - exDistance;
+            }
+            exDistance = distance;
         } else {
             h1.innerHTML = "juste 1 doigté";
         }
