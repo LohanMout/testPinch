@@ -19,8 +19,8 @@ window.addEventListener("touchmove", (e) => {
     } else if (touch.length > 2){
         pseudoCanvas.style.backgroundColor = "purple";
     }
-
-    if(e.touches >= 2){
+    console.log(touch.length);
+    if(touch.length >= 2){
         var doigt1 = e.touches[0];
         var doigt2 = e.touches[1];
         if(doigt1 != null){
